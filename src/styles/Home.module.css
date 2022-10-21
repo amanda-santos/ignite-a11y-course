@@ -22,10 +22,23 @@
   padding: 24px 20px;
 }
 
+.content h1,
 .content h2,
-.content h4,
+.content h3,
 .content p {
   margin-bottom: 20px;
+}
+
+.content h1 {
+  font-size: 24px;
+}
+
+.content h2 {
+  font-size: 20px;
+}
+
+.content h3 {
+  font-size: 16px;
 }
 
 .footer {

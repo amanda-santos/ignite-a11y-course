@@ -34,13 +34,13 @@ export default function Home() {
       <main>
         <article className={styles.content}>
           <header>
-            <h2>Lorem ipsum dolor sit amet consectetur adipisicing elit</h2>
+            <h1>Lorem ipsum dolor sit amet consectetur adipisicing elit</h1>
 
-            <h4>
+            <h2>
               Repellat cupiditate in veniam sit maiores iste magni perferendis
               commodi blanditiis perspiciatis, amet sed deserunt ullam voluptas
               repellendus voluptatibus quibusdam
-            </h4>
+            </h2>
           </header>
 
           <p>
