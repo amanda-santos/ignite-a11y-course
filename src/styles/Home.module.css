@@ -1,0 +1,33 @@
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  max-width: 1024px;
+  margin: 0 auto;
+  width: 100%;
+
+  padding: 24px 20px;
+}
+
+.nav a {
+  color: #8257e5;
+}
+
+.content {
+  color: #555;
+
+  max-width: 736px;
+  margin: 0 auto;
+  width: 100%;
+
+  padding: 24px 20px;
+}
+
+.content h2 {
+  margin-bottom: 20px;
+}
+
+.content p {
+  margin-bottom: 20px;
+}
