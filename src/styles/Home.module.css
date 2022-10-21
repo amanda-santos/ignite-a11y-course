@@ -24,10 +24,8 @@
   padding: 24px 20px;
 }
 
-.content h2 {
-  margin-bottom: 20px;
-}
-
+.content h2,
+.content h4,
 .content p {
   margin-bottom: 20px;
 }
