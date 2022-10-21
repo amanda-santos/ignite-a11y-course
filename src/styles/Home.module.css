@@ -15,8 +15,6 @@
 }
 
 .content {
-  color: #555;
-
   max-width: 736px;
   margin: 0 auto;
   width: 100%;
@@ -28,4 +26,25 @@
 .content h4,
 .content p {
   margin-bottom: 20px;
+}
+
+.footer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  max-width: 1024px;
+  margin: 0 auto;
+  width: 100%;
+
+  padding: 24px 20px;
+}
+
+.footer a {
+  padding: 1rem 2rem;
+  border-radius: 6px;
+  background: #202024;
+
+  color: #996dff;
+  text-decoration: none;
 }

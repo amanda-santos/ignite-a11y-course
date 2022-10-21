@@ -61,7 +61,7 @@ export default function Home() {
         </article>
       </main>
 
-      <footer className={styles.header} aria-label="footer">
+      <footer className={styles.footer} aria-label="footer">
         <Image src={rocketseatLogo} width={286 / 2} alt="Rocketseat Blog" />
 
         <div className={styles.nav}>
