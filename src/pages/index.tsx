@@ -1,24 +1,11 @@
 import Image from "next/future/image";
+import * as Dialog from "@radix-ui/react-dialog";
 
 import styles from "../styles/Home.module.css";
 
 import rocketseatLogo from "../assets/logo.svg";
-import { useEffect, useRef, useState } from "react";
 
 export default function Home() {
-  const [isModalOpen, setIsModalOpen] = useState(false);
-  const modalRef = useRef(null);
-
-  const handleAboutUsClick = () => {
-    setIsModalOpen((prevState) => !prevState);
-  };
-
-  useEffect(() => {
-    if (isModalOpen) {
-      modalRef.current.focus();
-    }
-  }, [isModalOpen]);
-
   return (
     <>
       <header className={styles.header}>
@@ -78,44 +65,32 @@ export default function Home() {
       <footer className={styles.footer} aria-label="footer">
         <Image src={rocketseatLogo} width={286 / 2} alt="Rocketseat Blog" />
 
-        <div className={styles.nav}>
-          <button
-            type="button"
-            onClick={handleAboutUsClick}
-            aria-controls="aboutUsModal"
-          >
-            About us
-          </button>
-        </div>
+        <nav className={styles.nav}>
+          <Dialog.Root>
+            <Dialog.Trigger asChild>
+              <button type="button">About us</button>
+            </Dialog.Trigger>
+            <Dialog.Portal>
+              <Dialog.Overlay className={styles.overlay} />
+              <Dialog.Content className={styles.modal}>
+                <Dialog.Title>About us</Dialog.Title>
+                <Dialog.Description>
+                  Lorem ipsum dolor, sit amet consectetur adipisicing elit.
+                  Necessitatibus id praesentium qui, expedita cum fugit iusto
+                  distinctio provident, repudiandae exercitationem delectus
+                  molestiae nobis quaerat consequuntur aliquam fuga non odio
+                  nihil!
+                </Dialog.Description>
+                <Dialog.Close asChild>
+                  <button className={styles.closeModalButton} type="button">
+                    Close
+                  </button>
+                </Dialog.Close>
+              </Dialog.Content>
+            </Dialog.Portal>
+          </Dialog.Root>
+        </nav>
       </footer>
-
-      {isModalOpen && (
-        <div
-          className={styles.modal}
-          id="aboutUsModal"
-          role="dialog"
-          aria-labelledby="aboutUsModalTitle"
-          aria-describedby="aboutUsModalDescription"
-          tabIndex={-1}
-          ref={modalRef}
-        >
-          <h2 id="aboutUsModalTitle">About us</h2>
-          <p id="aboutUsModalDescription">
-            Lorem ipsum dolor, sit amet consectetur adipisicing elit.
-            Necessitatibus id praesentium qui, expedita cum fugit iusto
-            distinctio provident, repudiandae exercitationem delectus molestiae
-            nobis quaerat consequuntur aliquam fuga non odio nihil!
-          </p>
-
-          <button
-            type="button"
-            onClick={handleAboutUsClick}
-            aria-label="Close modal"
-          >
-            Close
-          </button>
-        </div>
-      )}
     </>
   );
 }
